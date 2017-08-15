@@ -80,9 +80,6 @@ type Identifiers struct {
 
 type FnFunctionKeys struct {
 	F1  string `json:"f1"`
-	F10 string `json:"f10"`
-	F11 string `json:"f11"`
-	F12 string `json:"f12"`
 	F2  string `json:"f2"`
 	F3  string `json:"f3"`
 	F4  string `json:"f4"`
@@ -91,6 +88,9 @@ type FnFunctionKeys struct {
 	F7  string `json:"f7"`
 	F8  string `json:"f8"`
 	F9  string `json:"f9"`
+	F10 string `json:"f10"`
+	F11 string `json:"f11"`
+	F12 string `json:"f12"`
 }
 
 type SimpleModifications struct {
