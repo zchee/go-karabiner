@@ -4,6 +4,8 @@
 
 package types
 
+import "fmt"
+
 type Karabiner struct {
 	Global   Global    `json:"global"`
 	Profiles []Profile `json:"profiles"`
@@ -99,6 +101,27 @@ type SimpleModifications struct {
 }
 
 type VirtualHidKeyboard struct {
-	CapsLockDelayMilliseconds int    `json:"caps_lock_delay_milliseconds"`
-	KeyboardType              string `json:"keyboard_type"`
+	CapsLockDelayMilliseconds int          `json:"caps_lock_delay_milliseconds"`
+	KeyboardType              KeyboardType `json:"keyboard_type"`
+}
+
+type KeyboardType int
+
+const (
+	ANSI KeyboardType = iota
+	ISO
+	JIS
+)
+
+func (k KeyboardType) String() string {
+	switch k {
+	case ANSI:
+		return "ANSI"
+	case ISO:
+		return "ISO"
+	case JIS:
+		return "JIS"
+	default:
+		return fmt.Sprintf("KeyCode(%d)", k)
+	}
 }
