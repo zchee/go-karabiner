@@ -108,7 +108,8 @@ type VirtualHidKeyboard struct {
 type KeyboardType int
 
 const (
-	ANSI KeyboardType = iota
+	NONE KeyboardType = iota
+	ANSI
 	ISO
 	JIS
 )
