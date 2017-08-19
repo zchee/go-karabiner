@@ -4,8 +4,6 @@
 
 package karabiner
 
-import "fmt"
-
 type Karabiner struct {
 	Global   Global    `json:"global"`
 	Profiles []Profile `json:"profiles"`
@@ -105,27 +103,14 @@ type VirtualHidKeyboard struct {
 	KeyboardType              KeyboardType `json:"keyboard_type"`
 }
 
-type KeyboardType int
+type KeyboardType string
 
 const (
-	NONE KeyboardType = iota
-	ANSI
-	ISO
-	JIS
+	NONE KeyboardType = "ANSI"
+	ANSI KeyboardType = "ANSI"
+	ISO  KeyboardType = "ISO"
+	JIS  KeyboardType = "JIS"
 )
-
-func (k KeyboardType) String() string {
-	switch k {
-	case ANSI:
-		return "ANSI"
-	case ISO:
-		return "ISO"
-	case JIS:
-		return "JIS"
-	default:
-		return fmt.Sprintf("KeyCode(%d)", k)
-	}
-}
 
 // KeyCode represents a karabiner keycode.
 // This conevert table based by:
