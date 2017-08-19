@@ -16,7 +16,7 @@ type Global struct {
 }
 
 type Profile struct {
-	ComplexModifications ComplexModifications `json:"complex_modifications"`
+	ComplexModifications ComplexModifications `json:"complex_modifications,omitempty"`
 	Devices              []Device             `json:"devices"`
 	FnFunctionKeys       FnFunctionKeys       `json:"fn_function_keys"`
 	Name                 string               `json:"name"`
@@ -42,13 +42,13 @@ type Rule struct {
 type Manipulator struct {
 	From      From        `json:"from"`
 	To        []To        `json:"to"`
-	ToIfAlone []ToIfAlone `json:"to_if_alone"`
+	ToIfAlone []ToIfAlone `json:"to_if_alone,omitempty"`
 	Type      string      `json:"type"`
 }
 
 type From struct {
 	KeyCode   string    `json:"key_code"`
-	Modifiers Modifiers `json:"modifiers"`
+	Modifiers Modifiers `json:"modifiers,omitempty"`
 }
 
 type Modifiers struct {
