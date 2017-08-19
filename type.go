@@ -21,7 +21,7 @@ type Profile struct {
 	FnFunctionKeys       FnFunctionKeys       `json:"fn_function_keys"`
 	Name                 string               `json:"name"`
 	Selected             bool                 `json:"selected"`
-	SimpleModifications  SimpleModifications  `json:"simple_modifications"`
+	SimpleModifications  map[KeyCode]KeyCode  `json:"simple_modifications,omitempty"`
 	VirtualHidKeyboard   VirtualHidKeyboard   `json:"virtual_hid_keyboard"`
 }
 
@@ -68,7 +68,7 @@ type Device struct {
 	FnFunctionKeys                 FnFunctionKeys      `json:"fn_function_keys"`
 	Identifiers                    Identifiers         `json:"identifiers"`
 	Ignore                         bool                `json:"ignore"`
-	SimpleModifications            SimpleModifications `json:"simple_modifications"`
+	SimpleModifications            map[KeyCode]KeyCode `json:"simple_modifications,omitempty"`
 }
 
 type Identifiers struct {
@@ -91,11 +91,6 @@ type FnFunctionKeys struct {
 	F10 string `json:"f10"`
 	F11 string `json:"f11"`
 	F12 string `json:"f12"`
-}
-
-type SimpleModifications struct {
-	CapsLock    string `json:"caps_lock"`
-	RightOption string `json:"right_option"`
 }
 
 type VirtualHidKeyboard struct {
