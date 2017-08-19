@@ -101,10 +101,10 @@ type VirtualHidKeyboard struct {
 type KeyboardType string
 
 const (
-	NONE KeyboardType = "ANSI"
-	ANSI KeyboardType = "ANSI"
-	ISO  KeyboardType = "ISO"
-	JIS  KeyboardType = "JIS"
+	NONE KeyboardType = "none"
+	ANSI KeyboardType = "ansi"
+	ISO  KeyboardType = "iso"
+	JIS  KeyboardType = "jis"
 )
 
 // KeyCode represents a karabiner keycode.
